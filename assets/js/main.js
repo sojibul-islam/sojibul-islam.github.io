@@ -453,7 +453,7 @@
   // ---------- cv.html ----------
   function renderCv() {
     var P = S.profile, L = S.links, C = S.contact;
-    var site = location.protocol === "file:" ? "https://rproblemsolver.github.io/" : location.origin + location.pathname.replace(/cv\.html$/, "");
+    var site = location.protocol === "file:" ? "https://sojibul-islam.github.io/" : location.origin + location.pathname.replace(/cv\.html$/, "");
     var contact = [];
     if (C.email) contact.push('<a href="mailto:' + esc(C.email) + '">' + esc(C.email) + "</a>");
     if (C.phone) contact.push(esc(C.phone));

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rproblemsolver.github.io/sitemap.xml
+Sitemap: https://sojibul-islam.github.io/sitemap.xml

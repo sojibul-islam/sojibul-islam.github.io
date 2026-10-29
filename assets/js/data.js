@@ -36,7 +36,7 @@ window.SITE = {
     scholar: "",        // TODO: full Google Scholar profile URL
     researchgate: "",   // TODO: full ResearchGate profile URL
     linkedin: "https://www.linkedin.com/in/md-sojibul-islam-301a631a5/",
-    github: "https://github.com/Rproblemsolver",
+    github: "https://github.com/sojibul-islam",
     cv: "assets/cv.pdf" // create this from cv.html (see GUIDE_BN.md)
   },
 
