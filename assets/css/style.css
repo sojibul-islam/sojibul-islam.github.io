@@ -151,6 +151,9 @@ p { margin: 0 0 1em; }
 .hero-lead { font-size: 1.1rem; color: var(--on-ink); opacity: .9; max-width: 58ch; }
 .hero-affil { font-size: .92rem; color: var(--on-ink-muted); margin-bottom: 28px; }
 .hero-affil a { color: var(--on-ink); }
+.hero-position { display: inline-block; font-size: 1.02rem; font-weight: 600; color: #fff; margin-bottom: 2px; }
+.hero-position a { color: var(--accent); text-decoration: none; }
+.hero-position a:hover { text-decoration: underline; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-photo-wrap { position: relative; justify-self: center; }
 .hero-photo {

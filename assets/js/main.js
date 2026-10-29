@@ -162,11 +162,11 @@
       head.outerHTML =
         '<a class="skip-link" href="#main">Skip to content</a>' +
         '<div class="topbar"><div class="container">' +
-        '<span class="topbar-affil">' + esc(P.title) + " · " + esc(P.unit) + ", " + esc(P.affiliation) + "</span>" +
+        '<span class="topbar-affil">' + esc(P.unit) + ", " + esc(P.affiliation) + " · " + esc(P.location) + "</span>" +
         '<div class="icon-links">' + iconLinks() + "</div></div></div>" +
         '<header class="site-header"><nav class="nav container" aria-label="Main">' +
         '<a class="brand" href="./"><span class="brand-mark" aria-hidden="true">SI</span>' +
-        '<span><span class="brand-name">' + esc(P.name) + '</span><span class="brand-sub">' + esc(P.roles[0]) + " · " + esc(P.affiliation) + "</span></span></a>" +
+        '<span><span class="brand-name">' + esc(P.name) + '</span><span class="brand-sub">' + esc(P.title) + " at " + esc(P.affiliation) + "</span></span></a>" +
         '<button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>' +
         '<ul class="nav-links" id="nav-links">' +
         NAV.map(function (n) {
@@ -184,7 +184,7 @@
         '<footer class="site-footer"><div class="container">' +
         '<div class="footer-grid">' +
         "<div><h2>" + esc(P.name) + "</h2>" +
-        "<p>" + esc(P.title) + "<br>" + esc(P.unit) + '<br><a href="' + esc(P.affiliationUrl) + '" target="_blank" rel="noopener">' + esc(P.affiliation) + "</a>, " + esc(P.location) + "</p>" +
+        "<p>" + esc(P.title) + ' at <a href="' + esc(P.affiliationUrl) + '" target="_blank" rel="noopener">' + esc(P.affiliation) + "</a><br>" + esc(P.unit) + "<br>" + esc(P.location) + "</p>" +
         (S.contact.email ? '<p><a href="mailto:' + esc(S.contact.email) + '">' + esc(S.contact.email) + "</a></p>" : "") +
         "</div>" +
         "<div><h2>Navigate</h2><ul>" +
@@ -204,7 +204,7 @@
     set("hero-keywords", P.keywords.map(esc).join(" · "));
     set("hero-name", esc(P.name));
     set("hero-tagline", esc(P.tagline));
-    set("hero-affil", esc(P.title) + ", " + esc(P.unit) + '<br><a href="' + esc(P.affiliationUrl) + '" target="_blank" rel="noopener">' + esc(P.affiliation) + "</a>, " + esc(P.location));
+    set("hero-affil", '<strong class="hero-position">' + esc(P.title) + ' at <a href="' + esc(P.affiliationUrl) + '" target="_blank" rel="noopener">' + esc(P.affiliation) + "</a></strong><br>" + esc(P.unit) + ", " + esc(P.location));
     set("hero-cta",
       '<a class="btn btn-accent" href="' + esc(S.links.cv) + '" download data-cv>' + ICON.download + "Download CV</a>" +
       '<a class="btn btn-ghost" href="publications.html">View publications</a>' +
@@ -221,7 +221,7 @@
 
     set("bio", P.bio.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join(""));
     var facts = [
-      ["Position", P.title],
+      ["Position", P.title + " at " + P.affiliation],
       ["Institution", P.affiliation + ", " + P.location],
       ["Education", S.education[0].degree + ", MBSTU"],
       ["Expertise", "Biostatistics · NCD epidemiology · M&E"],
@@ -328,7 +328,7 @@
     var P = S.profile;
     photoInto($("about-photo"));
     set("about-name", esc(P.name));
-    set("about-title", esc(P.title) + " · " + esc(P.unit) + ", " + esc(P.affiliation));
+    set("about-title", esc(P.title) + " at " + esc(P.affiliation) + " · " + esc(P.unit));
     set("bio", P.bio.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join(""));
     set("about-links", '<a class="btn btn-primary" href="' + esc(S.links.cv) + '" download data-cv>' + ICON.download + "Download CV</a>" + profileButtons());
 
@@ -466,7 +466,7 @@
     };
 
     set("cv-body",
-      '<header class="cv-head"><div><h1>' + esc(P.name) + "</h1><p>" + esc(P.title) + "</p><p>" + esc(P.unit) + ", " + esc(P.affiliation) + "</p></div>" +
+      '<header class="cv-head"><div><h1>' + esc(P.name) + "</h1><p>" + esc(P.title) + " at " + esc(P.affiliation) + "</p><p>" + esc(P.unit) + "</p></div>" +
       '<div class="cv-contact">' + contact.map(function (c) { return "<p>" + c + "</p>"; }).join("") + "</div></header>" +
       "<h2>Profile</h2><p>" + esc(P.bio.join(" ")) + "</p>" +
       "<h2>Research interests</h2><p>" + S.interests.map(function (i) { return esc(i.title); }).join(" · ") + "</p>" +

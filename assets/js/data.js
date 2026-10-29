@@ -11,7 +11,7 @@ window.SITE = {
     name: "Md. Sojibul Islam",
     shortName: "Sojibul Islam",
     credentials: "MS in Statistics",
-    title: "Monitoring & Evaluation Officer",
+    title: "Statistician and M&E Officer",
     unit: "Non-communicable Disease, Nutrition Research Division",
     affiliation: "icddr,b",
     affiliationUrl: "https://www.icddrb.org",
@@ -21,7 +21,7 @@ window.SITE = {
     roles: ["Biostatistician", "Public Health Researcher", "M&E Specialist", "Health Data Scientist"],
     tagline: "Turning complex health data into evidence for non-communicable disease prevention, environmental health and stronger health systems in Bangladesh.",
     bio: [
-      "I am a statistician and public health researcher at icddr,b, where I work as a Monitoring & Evaluation Officer in the Non-communicable Disease Unit of the Nutrition Research Division. My work spans research design, protocol development, field implementation and the statistical analysis of large health datasets.",
+      "I am a statistician and public health researcher at icddr,b, where I work as a Statistician and Monitoring & Evaluation (M&E) Officer in the Non-communicable Disease Unit of the Nutrition Research Division. My work spans research design, protocol development, field implementation and the statistical analysis of large health datasets.",
       "My research focuses on non-communicable diseases (hypertension, diabetes and pediatric NCDs), environmental health and WASH in coastal Bangladesh, and child nutrition. I have more than six years of experience in R, STATA, SPSS and Python, including regression, mixed models, structural equation modelling, survival analysis, geospatial analysis and machine learning."
     ]
   },
