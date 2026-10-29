@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO: replace USERNAME with your GitHub username
 Sitemap: https://rproblemsolver.github.io/sitemap.xml
