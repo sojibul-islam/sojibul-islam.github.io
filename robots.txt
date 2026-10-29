@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: replace USERNAME with your GitHub username
+Sitemap: https://USERNAME.github.io/sitemap.xml
