@@ -1,8 +1,8 @@
 /*
  * ============================================================
  *  SITE CONTENT — edit this file to update your website.
- *  index.html and cv.html both read everything from here.
- *  Lines marked TODO need your real information.
+ *  Every page (Home, About, Research, Publications, Contact, CV)
+ *  reads its content from here.
  *  Leave a link as "" (empty) to hide it from the site.
  * ============================================================
  */
@@ -10,14 +10,18 @@ window.SITE = {
   profile: {
     name: "Md. Sojibul Islam",
     shortName: "Sojibul Islam",
+    credentials: "MS in Statistics",
     title: "Monitoring & Evaluation Officer",
+    unit: "Non-communicable Disease, Nutrition Research Division",
     affiliation: "icddr,b",
     affiliationUrl: "https://www.icddrb.org",
     location: "Mohakhali, Dhaka, Bangladesh",
-    photo: "assets/img/profile.jpg", // put your photo here; initials are shown if missing
-    tagline: "Statistician & public health researcher working on non-communicable diseases, environmental health and health systems in Bangladesh.",
+    photo: "assets/img/profile.jpg",
+    keywords: ["Biostatistics", "Non-communicable Diseases", "Environmental Health", "Health Systems"],
+    roles: ["Biostatistician", "Public Health Researcher", "M&E Specialist", "Health Data Scientist"],
+    tagline: "Turning complex health data into evidence for non-communicable disease prevention, environmental health and stronger health systems in Bangladesh.",
     bio: [
-      "I am a statistician and public health researcher at icddr,b, where I work as a Monitoring & Evaluation Officer. My work spans research design, protocol development, field implementation and the statistical analysis of large health datasets.",
+      "I am a statistician and public health researcher at icddr,b, where I work as a Monitoring & Evaluation Officer in the Non-communicable Disease Unit of the Nutrition Research Division. My work spans research design, protocol development, field implementation and the statistical analysis of large health datasets.",
       "My research focuses on non-communicable diseases (hypertension, diabetes and pediatric NCDs), environmental health and WASH in coastal Bangladesh, and child nutrition. I have more than six years of experience in R, STATA, SPSS and Python, including regression, mixed models, structural equation modelling, survival analysis, geospatial analysis and machine learning."
     ]
   },
@@ -37,60 +41,110 @@ window.SITE = {
   },
 
   // Optional: free contact form from https://formspree.io — paste your form ID (e.g. "xyzabcd")
-  formspreeId: "", // TODO (optional)
+  formspreeId: "",
 
-  interests: [
-    { title: "Non-communicable diseases", text: "Hypertension, diabetes and their risk factors; medication affordability; pediatric NCDs." },
-    { title: "Environmental health & WASH", text: "Drinking-water salinity and quality in coastal Khulna and Satkhira, and its health effects." },
-    { title: "Child nutrition", text: "Determinants of stunting among under-five children using survey data and machine learning." },
-    { title: "Health systems & M&E", text: "Monitoring, evaluation and learning frameworks, health systems gap analysis and local health planning." },
-    { title: "Biostatistics & data science", text: "Mixed models, SEM, survival analysis, geospatial analysis, ML and interactive dashboards." }
+  // Headline numbers on the home page
+  stats: [
+    { value: 6, suffix: "+", label: "Years of research" },
+    { value: "pubs", suffix: "", label: "Publications & preprints" },
+    { value: 16.5, suffix: "K", label: "Households surveyed" },
+    { value: "projects", suffix: "", label: "Research projects" }
   ],
 
+  // icon: ncd | water | child | system | chart
+  interests: [
+    {
+      id: "ncd", icon: "ncd",
+      title: "Non-communicable Diseases",
+      text: "Hypertension, diabetes and their risk factors; medication affordability; pediatric NCDs.",
+      details: "I study the burden, risk factors and management of hypertension and diabetes in Bangladesh, from community risk-factor surveys (COBRA-BPS) and digital health records to the price and affordability of NCD medicines. I also contribute to a longitudinal study of pediatric NCDs and to evidence syntheses on NCD screening and prevention."
+    },
+    {
+      id: "environment", icon: "water",
+      title: "Environmental Health & WASH",
+      text: "Drinking-water salinity and quality in coastal Khulna and Satkhira, and its health effects.",
+      details: "In coastal Bangladesh, drinking-water salinity is a growing threat linked to climate change. I manage and analyse a water-quality survey linked to ~16,500 households, using geospatial methods in R to connect households to their water sources and study NCD and environmental risk among older people."
+    },
+    {
+      id: "nutrition", icon: "child",
+      title: "Child Nutrition",
+      text: "Determinants of stunting among under-five children using survey data and machine learning.",
+      details: "My MS thesis applied machine-learning techniques to the 2017-18 Bangladesh Demographic and Health Survey to identify factors affecting stunting among under-five children, and I have presented this work at an international conference."
+    },
+    {
+      id: "health-systems", icon: "system",
+      title: "Health Systems & M&E",
+      text: "Monitoring, evaluation and learning frameworks, health systems gap analysis and local health planning.",
+      details: "I design M&E frameworks, theories of change and real-time monitoring dashboards, and support district and upazila Health Systems Improvement Plans (HSIPs) through stakeholder workshops and gap analyses."
+    },
+    {
+      id: "biostatistics", icon: "chart",
+      title: "Biostatistics & Data Science",
+      text: "Mixed models, SEM, survival analysis, geospatial analysis, ML and interactive dashboards.",
+      details: "Across projects I apply regression, mixed models, structural equation modelling, survival and trend analysis, text mining and machine learning, and build interactive dashboards in R Shiny and Power BI. I also teach R for data analysis and research."
+    }
+  ],
+
+  // area must match an interest id above
   projects: [
     {
+      area: "environment",
       title: "Drinking-water salinity & household health survey",
       org: "icddr,b",
       period: "2024 – present",
       text: "Data management and analysis of a drinking-water salinity/quality survey in Koyra (Khulna) and Assasuni (Satkhira), linked to a household survey of ~16,546 households (~56,000 members) in 30 villages. Geospatial analysis in R to compute household-to-water-source distances."
     },
     {
+      area: "environment",
       title: "NCDs & environmental risk among older people",
       org: "icddr,b",
       period: "2024 – present",
       text: "Contributed to a concept note on NCDs and environment-related risk factors among older people in coastal Khulna and Satkhira."
     },
     {
+      area: "ncd",
       title: "COBRA-BPS: Control of Blood Pressure and Risk Attenuation",
       org: "icddr,b — Bangladesh, Pakistan & Sri Lanka",
       period: "2023",
       text: "Objective-wise analysis of community NCD risk-factor data (socio-economic status, metabolic risk, diet, smoking, physical activity) using logistic, linear and survival models; built an evidence review matrix."
     },
     {
+      area: "ncd",
       title: "COBRA Urban Digitization Study",
       org: "NCD Unit, icddr,b",
       period: "2023 – 2024",
       text: "Led study design, implementation and monitoring at Primary Health Care Centre (PHCC-1) and Dhaka Mohanagar General Hospital."
     },
     {
+      area: "ncd",
       title: "Hypertension & diabetes identification (WHO SEARO)",
       org: "icddr,b — Matlab",
       period: "2023 – 2024",
       text: "Supported implementation of hypertension and diabetes identification among adults aged 40+ in Matlab North and South."
     },
     {
+      area: "ncd",
       title: "Pediatric NCD study & scoping review",
       org: "icddr,b",
       period: "2023 – 2024",
       text: "Longitudinal study of risk factors for cardiovascular disease, cancer, respiratory disease, diabetes and mental health in children; scoping review using PubMed, Scopus, EBSCO and Cochrane."
     },
     {
+      area: "health-systems",
+      title: "Health Systems Improvement Plans (HSIP)",
+      org: "icddr,b",
+      period: "2024 – present",
+      text: "Supported the development, testing and piloting of local Health Systems Improvement Plans and toolkits at district and upazila levels, alongside complaint and feedback mechanisms."
+    },
+    {
+      area: "nutrition",
       title: "MS thesis: stunting & machine learning",
       org: "Mawlana Bhashani Science and Technology University",
       period: "2021",
       text: "Factors affecting stunting among under-five children in Bangladesh: an illustration of various machine learning techniques using 2017-18 BDHS data."
     },
     {
+      area: "biostatistics",
       title: "BSc project: rural–urban fertility",
       org: "Mawlana Bhashani Science and Technology University",
       period: "2019",
@@ -100,6 +154,7 @@ window.SITE = {
 
   // type: "journal" | "conference" | "preprint" | "other"
   // Wrap your own name in ** ** to show it in bold, e.g. "Author A, **Islam MS**, Author B"
+  // topics: short tags used for the topic filter on the Publications page
   publications: [
     {
       type: "preprint",
@@ -109,7 +164,8 @@ window.SITE = {
       venue: "SSRN Electronic Journal",
       details: "2026",
       doi: "10.2139/ssrn.6935380",
-      note: "Preprint"
+      note: "Preprint",
+      topics: ["NCD", "Health promotion", "Systematic review"]
     },
     {
       type: "journal",
@@ -119,7 +175,8 @@ window.SITE = {
       venue: "BMC Public Health",
       details: "2026",
       doi: "10.1186/s12889-026-29888-4",
-      note: "Accepted"
+      note: "Accepted",
+      topics: ["NCD", "Access to medicines"]
     },
     {
       type: "journal",
@@ -129,7 +186,8 @@ window.SITE = {
       venue: "International Journal of Applied Pharmaceutics",
       details: "2023;15(6)",
       doi: "10.22159/ijap.2023v15i6.49298",
-      note: ""
+      note: "",
+      topics: ["COVID-19", "Vaccine safety"]
     },
     {
       type: "conference",
@@ -139,7 +197,33 @@ window.SITE = {
       venue: "International conference presentation",
       details: "",
       doi: "",
-      note: ""
+      note: "",
+      topics: ["Child nutrition"]
+    }
+  ],
+
+  // Latest news shown on the home page (newest first). link is optional.
+  news: [
+    {
+      date: "2026-06",
+      tag: "Preprint",
+      title: "New preprint: social marketing strategies for NCD screening and prevention in LMICs",
+      text: "A systematic review using a social ecological model framework, now available on SSRN.",
+      link: "https://doi.org/10.2139/ssrn.6935380"
+    },
+    {
+      date: "2026",
+      tag: "Publication",
+      title: "Paper accepted in BMC Public Health",
+      text: "Patterns, prices and affordability of hypertension and diabetes medications in Bangladesh.",
+      link: "https://doi.org/10.1186/s12889-026-29888-4"
+    },
+    {
+      date: "2024-10",
+      tag: "Career",
+      title: "Joined icddr,b as Monitoring & Evaluation Officer",
+      text: "Leading M&E, environmental health and health-systems research in coastal Khulna and Satkhira.",
+      link: ""
     }
   ],
 
