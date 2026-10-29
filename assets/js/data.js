@@ -32,7 +32,7 @@ window.SITE = {
     scholar: "",        // TODO: full Google Scholar profile URL
     researchgate: "",   // TODO: full ResearchGate profile URL
     linkedin: "",       // TODO: full LinkedIn profile URL
-    github: "",         // TODO: e.g. "https://github.com/Rproblemsolver"
+    github: "https://github.com/Rproblemsolver",         // TODO: e.g. "https://github.com/Rproblemsolver"
     cv: "assets/cv.pdf" // create this from cv.html (see GUIDE_BN.md)
   },
 
