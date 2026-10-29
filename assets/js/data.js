@@ -28,11 +28,11 @@ window.SITE = {
   },
 
   links: {
-    orcid: "",          // TODO: e.g. "0000-0002-1234-5678" (just the iD)
+    orcid: "0000-0002-9065-1733",
     scholar: "",        // TODO: full Google Scholar profile URL
     researchgate: "",   // TODO: full ResearchGate profile URL
     linkedin: "",       // TODO: full LinkedIn profile URL
-    github: "https://github.com/Rproblemsolver",         // TODO: e.g. "https://github.com/Rproblemsolver"
+    github: "https://github.com/Rproblemsolver",
     cv: "assets/cv.pdf" // create this from cv.html (see GUIDE_BN.md)
   },
 
@@ -101,6 +101,16 @@ window.SITE = {
   // type: "journal" | "conference" | "preprint" | "other"
   // Wrap your own name in ** ** to show it in bold, e.g. "Author A, **Islam MS**, Author B"
   publications: [
+    {
+      type: "preprint",
+      year: 2026,
+      title: "Social marketing strategies for non-communicable disease screening and prevention in low- and middle-income countries: a systematic review using a social ecological model framework",
+      authors: "Mondal S, Adhikary RK, Chakma N, Farzana N, Zabeen SI, Ali SB, Fattah MSH, **Islam MS**, Nahrin R, Tarique DA, Khan TU, Rahman M, Ahmed M, Sutarsa IN, Kelly M, Naheed A, Chakrabortty RK, Sarma H",
+      venue: "SSRN Electronic Journal",
+      details: "2026",
+      doi: "10.2139/ssrn.6935380",
+      note: "Preprint"
+    },
     {
       type: "journal",
       year: 2026,
